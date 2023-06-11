@@ -1,4 +1,4 @@
-# Medical 2D Image Segmentation Benckmark
+# Medical 2D Image Segmentation Benchmark
 
 
 
@@ -6,7 +6,7 @@
 
 For easy evaluation and fair comparison on 2d medical image segmentation method, we aim to collect and build a medical image segmentation U-shape architecture benchmark to implement the medical 2d image segmentation tasks.
 
-This repo has collected and re-implemented medical image segmentation network based on U-shape architecture are followed:
+This repositories has collected and re-implemented medical image segmentation network based on U-shape architecture are followed:
 
 | Network         | Original code                                                | Reference                                                    |
 | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -64,7 +64,7 @@ Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images
 
 ## Training
 
-You can first split your dataset for train and validate:
+You can first split your dataset:
 
 ```python
 python split.py
@@ -73,12 +73,12 @@ python split.py
 Then, training and validating your dataset:
 
 ```python
-python main.py --model CMUNet --base_lr 0.01 --epoch 300 --batch_size 4 --img_size 256 --num_classes 1
+python main.py --model CMUNet --base_dir ./data/busi --base_lr 0.01 --epoch 300 --batch_size 4
 ```
 
 ## Result on BUSI
 
-We train the U-shape networks with [BUSI dataset](https://www.kaggle.com/aryashah2k/breast-ultrasound-images-dataset). The BUSI collected 780 breast ultrasound images, including normal, benign and malignant cases of breast cancer with their corresponding segmentation results. **We only used benign and malignant images (647 images)**. And we randomly split thrice, 70% for training and 30% for validation. In addition, we resize all the images 256×256 and perform random rotation and flip for data augmentation.
+We train the U-shape based networks with [BUSI dataset](https://www.kaggle.com/aryashah2k/breast-ultrasound-images-dataset). The BUSI collected 780 breast ultrasound images, including normal, benign and malignant cases of breast cancer with their corresponding segmentation results. **We only used benign and malignant images (647 images)**. And we randomly split thrice, 70% for training and 30% for validation. In addition, we resize all the images 256×256 and perform random rotation and flip for data augmentation.
 
 |     Method      |   Params (M)    |        FPS        |     GFLOPs      |          IoU          |       F1-value        |
 | :-------------: | :-------------: | :---------------: | :-------------: | :-------------------: | :-------------------: |
@@ -86,15 +86,15 @@ We train the U-shape networks with [BUSI dataset](https://www.kaggle.com/aryasha
 | Attention U-Net |      34.87      |      129.92       |      66.63      |      68.55±3.22       |      76.88±3.50       |
 |     U-Net++     |      26.90      |      125.50       |      37.62      |      69.49±2.94       |      78.06±3.25       |
 |     U-Net3+     |      26.97      |       50.60       |     199.74      |      68.38±3.35       |      76.88±3.68       |
-|     CMU-Net     |      49.93      |       93.19       |      91.25      | <u>**71.42±2.65**</u> |      79.49±2.92       |
-|    TransUnet    |     105.32      |      112.95       |      38.52      |      71.39±2.37       | <u>**79.85±2.59**</u> |
-|      MedT       | <u>**1.37**</u> |       22.97       |      2.40       |      63.36±1.56       |      73.37±1.63       |
+|     CMU-Net     |      49.93      |       93.19       |      91.25      | **<u>71.42±2.65</u>** |      79.49±2.92       |
+|    TransUnet    |     105.32      |      112.95       |      38.52      |      71.39±2.37       | **<u>79.85±2.59</u>** |
+|      MedT       | **<u>1.37</u>** |       22.97       |      2.40       |      63.36±1.56       |      73.37±1.63       |
 |    SwinUnet     |      27.14      |      392.21       |      5.91       |      54.11±2.29       |      65.46±1.91       |
-|      UNeXt      |      1.47       | **<u>650.48</u>** | <u>**0.58**</u> |      65.04±2.71       |      74.16±2.84       |
+|      UNeXt      |      1.47       | **<u>650.48</u>** | **<u>0.58</u>** |      65.04±2.71       |      74.16±2.84       |
 
 ## Acknowledgements:
 
-This code-base uses helper functions from [CMU-Net](https://github.com/FengheTan9/CMU-Net)and [Image_Segmntation](https://github.com/LeeJunHyun/Image_Segmentation).
+This code-base uses helper functions from [CMU-Net](https://github.com/FengheTan9/CMU-Net) and [Image_Segmntation](https://github.com/LeeJunHyun/Image_Segmentation).
 
 ## Other QS:
 
