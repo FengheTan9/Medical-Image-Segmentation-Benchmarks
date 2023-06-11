@@ -25,9 +25,12 @@ This repositories has collected and re-implemented medical image segmentation ne
 Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images-dataset) dataset or your own dataset as the following architecture. 
 
 ```
-├── CMUNet
-    ├── inputs
-        ├── BUSI
+├── Medical_Image_Segmentation_Benchmark
+    ├── src
+    ├── main.py
+    ├── split.py
+    ├── data
+        ├── busi
             ├── images
             |   ├── benign (10).png
             │   ├── malignant (17).png
