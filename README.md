@@ -4,19 +4,19 @@
 
 For easy evaluation and fair comparison on 2D medical image segmentation method, we aim to collect and build a medical image segmentation U-shape architecture benchmark to implement the medical 2d image segmentation tasks.
 
-This repositories has collected and re-implemented medical image segmentation network based on U-shape architecture are followed:
+This repositories has collected and re-implemented medical image segmentation networks based on U-shape architecture are followed:
 
-| Network         | Original code                                                | Reference                                                    |
-| --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| U-Net           | [Caffe](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net) | [MICCAI'15](https://arxiv.org/pdf/1505.04597.pdf)            |
-| Attention U-Net | [Pytorch](https://github.com/ozan-oktay/Attention-Gated-Networks) | [Arxiv'18](https://arxiv.org/pdf/1804.03999.pdf)             |
-| U-Net++         | [Pytorch](https://github.com/MrGiovanni/UNetPlusPlus)        | [MICCAI'18](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7329239/pdf/nihms-1600717.pdf) |
-| U-Net 3+        | [Pytorch](https://github.com/ZJUGiveLab/UNet-Version)        | [ICASSP'20](https://arxiv.org/pdf/2004.08790)                |
-| TransUnet       | [Pytorch](https://github.com/Beckschen/TransUNet)            | [Arxiv'21](https://arxiv.org/pdf/2102.04306.pdf)             |
-| MedT            | [Pytorch](https://github.com/jeya-maria-jose/Medical-Transformer) | [MICCAI'21](https://arxiv.org/pdf/2102.10662.pdf)            |
-| UNeXt           | [Pytorch](https://github.com/jeya-maria-jose/UNeXt-pytorch)  | [MICCAI'22](https://arxiv.org/pdf/2203.04967.pdf)            |
-| SwinUnet        | [Pytorch](https://github.com/HuCaoFighting/Swin-Unet)        | [ECCV'22](https://arxiv.org/pdf/2105.05537.pdf)              |
-| CMU-Net         | [Pytorch](https://github.com/FengheTan9/CMU-Net)             | [ISBI'23](https://arxiv.org/pdf/2210.13012.pdf)              |
+|     Network     |                        Original code                         |                          Reference                           |
+| :-------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|      U-Net      | [Caffe](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net) |      [MICCAI'15](https://arxiv.org/pdf/1505.04597.pdf)       |
+| Attention U-Net | [Pytorch](https://github.com/ozan-oktay/Attention-Gated-Networks) |       [Arxiv'18](https://arxiv.org/pdf/1804.03999.pdf)       |
+|     U-Net++     |    [Pytorch](https://github.com/MrGiovanni/UNetPlusPlus)     | [MICCAI'18](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7329239/pdf/nihms-1600717.pdf) |
+|    U-Net 3+     |    [Pytorch](https://github.com/ZJUGiveLab/UNet-Version)     |        [ICASSP'20](https://arxiv.org/pdf/2004.08790)         |
+|    TransUnet    |      [Pytorch](https://github.com/Beckschen/TransUNet)       |       [Arxiv'21](https://arxiv.org/pdf/2102.04306.pdf)       |
+|      MedT       | [Pytorch](https://github.com/jeya-maria-jose/Medical-Transformer) |      [MICCAI'21](https://arxiv.org/pdf/2102.10662.pdf)       |
+|      UNeXt      | [Pytorch](https://github.com/jeya-maria-jose/UNeXt-pytorch)  |      [MICCAI'22](https://arxiv.org/pdf/2203.04967.pdf)       |
+|    SwinUnet     |    [Pytorch](https://github.com/HuCaoFighting/Swin-Unet)     |       [ECCV'22](https://arxiv.org/pdf/2105.05537.pdf)        |
+|     CMU-Net     |       [Pytorch](https://github.com/FengheTan9/CMU-Net)       |       [ISBI'23](https://arxiv.org/pdf/2210.13012.pdf)        |
 
 ## Datasets
 
@@ -77,7 +77,7 @@ Then, training and validating your dataset:
 python main.py --model CMUNet --base_dir ./data/busi --base_lr 0.01 --epoch 300 --batch_size 4
 ```
 
-## Result on BUSI
+## Results on BUSI
 
 We train the U-shape based networks with [BUSI dataset](https://www.kaggle.com/aryashah2k/breast-ultrasound-images-dataset). The BUSI collected 780 breast ultrasound images, including normal, benign and malignant cases of breast cancer with their corresponding segmentation results. **We only used benign and malignant images (647 images)**. And we randomly split thrice, 70% for training and 30% for validation. In addition, we resize all the images 256×256 and perform random rotation and flip for data augmentation.
 
