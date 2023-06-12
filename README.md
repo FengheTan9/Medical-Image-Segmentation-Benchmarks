@@ -4,7 +4,7 @@
 
 
 
-For easy evaluation and fair comparison on 2d medical image segmentation method, we aim to collect and build a medical image segmentation U-shape architecture benchmark to implement the medical 2d image segmentation tasks.
+For easy evaluation and fair comparison on 2D medical image segmentation method, we aim to collect and build a medical image segmentation U-shape architecture benchmark to implement the medical 2d image segmentation tasks.
 
 This repositories has collected and re-implemented medical image segmentation network based on U-shape architecture are followed:
 
