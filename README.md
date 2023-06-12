@@ -2,23 +2,21 @@
 
 
 
-
-
 For easy evaluation and fair comparison on 2D medical image segmentation method, we aim to collect and build a medical image segmentation U-shape architecture benchmark to implement the medical 2d image segmentation tasks.
 
 This repositories has collected and re-implemented medical image segmentation network based on U-shape architecture are followed:
 
 | Network         | Original code                                                | Reference                                                    |
 | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| U-Net           | [Caffe](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net) | [MICCAI](https://arxiv.org/pdf/1505.04597.pdf)               |
-| Attention U-Net | [Pytorch](https://github.com/ozan-oktay/Attention-Gated-Networks) | [Arxiv](https://arxiv.org/pdf/1804.03999.pdf)                |
-| UNet++          | [Pytorch](https://github.com/MrGiovanni/UNetPlusPlus)        | [MICCAI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7329239/pdf/nihms-1600717.pdf) |
-| UNet3+          | [Pytorch](https://github.com/ZJUGiveLab/UNet-Version)        | [ICASSP](https://arxiv.org/pdf/2004.08790)                   |
-| UNeXt           | [Pytorch](https://github.com/jeya-maria-jose/UNeXt-pytorch)  | [MICCAI](https://arxiv.org/pdf/2203.04967.pdf)               |
-| CMUNet          | [Pytorch](https://github.com/FengheTan9/CMU-Net)             | [ISBI](https://arxiv.org/abs/2210.13012)                     |
-| TransUnet       | [Pytorch](https://github.com/Beckschen/TransUNet)            | [Arxiv](https://arxiv.org/pdf/2102.04306.pdf)                |
-| MedT            | [Pytorch](https://github.com/jeya-maria-jose/Medical-Transformer) | [MICCAI](https://arxiv.org/pdf/2102.10662.pdf)               |
-| SwinUnet        | [Pytorch](https://github.com/HuCaoFighting/Swin-Unet)        | [ECCV](https://arxiv.org/pdf/2105.05537.pdf)                 |
+| U-Net           | [Caffe](http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net) | [MICCAI'15](https://arxiv.org/pdf/1505.04597.pdf)            |
+| Attention U-Net | [Pytorch](https://github.com/ozan-oktay/Attention-Gated-Networks) | [Arxiv'18](https://arxiv.org/pdf/1804.03999.pdf)             |
+| U-Net++         | [Pytorch](https://github.com/MrGiovanni/UNetPlusPlus)        | [MICCAI'18](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7329239/pdf/nihms-1600717.pdf) |
+| U-Net 3+        | [Pytorch](https://github.com/ZJUGiveLab/UNet-Version)        | [ICASSP'20](https://arxiv.org/pdf/2004.08790)                |
+| TransUnet       | [Pytorch](https://github.com/Beckschen/TransUNet)            | [Arxiv'21](https://arxiv.org/pdf/2102.04306.pdf)             |
+| MedT            | [Pytorch](https://github.com/jeya-maria-jose/Medical-Transformer) | [MICCAI'21](https://arxiv.org/pdf/2102.10662.pdf)            |
+| UNeXt           | [Pytorch](https://github.com/jeya-maria-jose/UNeXt-pytorch)  | [MICCAI'22](https://arxiv.org/pdf/2203.04967.pdf)            |
+| SwinUnet        | [Pytorch](https://github.com/HuCaoFighting/Swin-Unet)        | [ECCV'22](https://arxiv.org/pdf/2105.05537.pdf)              |
+| CMU-Net         | [Pytorch](https://github.com/FengheTan9/CMU-Net)             | [ISBI'23](https://arxiv.org/pdf/2210.13012.pdf)              |
 
 ## Datasets
 
@@ -89,11 +87,11 @@ We train the U-shape based networks with [BUSI dataset](https://www.kaggle.com/a
 | Attention U-Net |      34.87      |      129.92       |      66.63      |      68.55±3.22       |      76.88±3.50       |
 |     U-Net++     |      26.90      |      125.50       |      37.62      |      69.49±2.94       |      78.06±3.25       |
 |     U-Net3+     |      26.97      |       50.60       |     199.74      |      68.38±3.35       |      76.88±3.68       |
-|     CMU-Net     |      49.93      |       93.19       |      91.25      | **<u>71.42±2.65</u>** |      79.49±2.92       |
 |    TransUnet    |     105.32      |      112.95       |      38.52      |      71.39±2.37       | **<u>79.85±2.59</u>** |
 |      MedT       | **<u>1.37</u>** |       22.97       |      2.40       |      63.36±1.56       |      73.37±1.63       |
 |    SwinUnet     |      27.14      |      392.21       |      5.91       |      54.11±2.29       |      65.46±1.91       |
 |      UNeXt      |      1.47       | **<u>650.48</u>** | **<u>0.58</u>** |      65.04±2.71       |      74.16±2.84       |
+|     CMU-Net     |      49.93      |       93.19       |      91.25      | **<u>71.42±2.65</u>** |      79.49±2.92       |
 
 ## Acknowledgements:
 
