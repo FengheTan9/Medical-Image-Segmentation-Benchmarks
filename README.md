@@ -1,4 +1,4 @@
-# Medical 2D Image Segmentation Benchmark
+# Medical 2D Image Segmentation Benchmarks
 
 
 
@@ -32,14 +32,12 @@ Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images
             ├── images
             |   ├── benign (10).png
             │   ├── malignant (17).png
-            │   ├── normal (14).png
             │   ├── ...
             |
             └── masks
                 ├── 0
                 |   ├── benign (10).png
                 |   ├── malignant (17).png
-                |   ├── normal (14).png
                 |   ├── ...
         ├── your 2D dataset
             ├── images
@@ -74,7 +72,7 @@ python split.py
 Then, training and validating your dataset:
 
 ```python
-python main.py --model CMUNet --base_dir ./data/busi --base_lr 0.01 --epoch 300 --batch_size 4
+python main.py --model CMUNet --base_dir ./data/busi --base_lr 0.01 --epoch 300 --batch_size 8
 ```
 
 ## Results on BUSI
@@ -95,7 +93,7 @@ We train the U-shape based networks with [BUSI dataset](https://www.kaggle.com/a
 
 ## Acknowledgements:
 
-This code-base uses helper functions from [CMU-Net](https://github.com/FengheTan9/CMU-Net) and [Image_Segmntation](https://github.com/LeeJunHyun/Image_Segmentation).
+This code-base uses helper functions from [CMU-Net](https://github.com/FengheTan9/CMU-Net) and [Image_Segmentation](https://github.com/LeeJunHyun/Image_Segmentation).
 
 ## Other QS:
 
