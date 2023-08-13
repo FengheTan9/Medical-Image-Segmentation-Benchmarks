@@ -20,6 +20,7 @@ from src.network.conv_based.AttU_Net import AttU_Net
 from src.network.conv_based.UNeXt import UNext
 from src.network.conv_based.UNetplus import ResNet34UnetPlus
 from src.network.conv_based.UNet3plus import UNet3plus
+from src.network.conv_based.CMUNeXt import cmunext
 
 from src.network.transfomer_based.transformer_based_network import get_transformer_based_model
 
@@ -38,11 +39,11 @@ def seed_torch(seed):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', type=str, default="U_Net",
-                    choices=["CMUNet", "AttU_Net", "TransUnet", "R2U_Net", "U_Net",
+                    choices=["CMUNeXt", "CMUNet", "AttU_Net", "TransUnet", "R2U_Net", "U_Net",
                              "UNext", "UNetplus", "UNet3plus", "SwinUnet", "MedT", "TransUnet"], help='model')
 parser.add_argument('--base_dir', type=str, default="./data/busi", help='dir')
-parser.add_argument('--train_file_dir', type=str, default="train.txt", help='dir')
-parser.add_argument('--val_file_dir', type=str, default="val.txt", help='dir')
+parser.add_argument('--train_file_dir', type=str, default="busi_train.txt", help='dir')
+parser.add_argument('--val_file_dir', type=str, default="busi_val.txt", help='dir')
 parser.add_argument('--base_lr', type=float, default=0.01, help='segmentation network learning rate')
 parser.add_argument('--batch_size', type=int, default=4, help='batch_size per gpu')
 parser.add_argument('--epoch', type=int, default=300, help='train epoch')
@@ -56,6 +57,8 @@ seed_torch(args.seed)
 def get_model(args):
     if args.model == "CMUNet":
         model = CMUNet(output_ch=args.num_classes).cuda()
+    elif args.model == "CMUNeXt":
+        model = cmunext(num_classes=args.num_classes).cuda()
     elif args.model == "U_Net":
         model = U_Net(output_ch=args.num_classes).cuda()
     elif args.model == "AttU_Net":
@@ -92,8 +95,8 @@ def getDataloader(args):
                           train_file_dir=args.train_file_dir, val_file_dir=args.val_file_dir)
     print("train num:{}, val num:{}".format(len(db_train), len(db_val)))
 
-    trainloader = DataLoader(db_train, batch_size=args.batch_size, shuffle=True, num_workers=16, pin_memory=False)
-    valloader = DataLoader(db_val, batch_size=args.batch_size, shuffle=False, num_workers=8)
+    trainloader = DataLoader(db_train, batch_size=args.batch_size, shuffle=True, num_workers=8, pin_memory=False)
+    valloader = DataLoader(db_val, batch_size=args.batch_size, shuffle=False, num_workers=4)
 
     return trainloader, valloader
 

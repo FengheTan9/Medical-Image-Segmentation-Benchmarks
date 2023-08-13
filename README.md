@@ -4,6 +4,10 @@
 
 For easy evaluation and fair comparison on 2D medical image segmentation method, we aim to collect and build a medical image segmentation U-shape architecture benchmark to implement the medical 2d image segmentation tasks.
 
+##### News 🥰
+
+- CMUNeXt is now on this repo ! 😘
+
 This repositories has collected and re-implemented medical image segmentation networks based on U-shape architecture are followed:
 
 |     Network     |                        Original code                         |                          Reference                           |
@@ -17,16 +21,14 @@ This repositories has collected and re-implemented medical image segmentation ne
 |      UNeXt      | [Pytorch](https://github.com/jeya-maria-jose/UNeXt-pytorch)  |      [MICCAI'22](https://arxiv.org/pdf/2203.04967.pdf)       |
 |    SwinUnet     |    [Pytorch](https://github.com/HuCaoFighting/Swin-Unet)     |       [ECCV'22](https://arxiv.org/pdf/2105.05537.pdf)        |
 |     CMU-Net     |       [Pytorch](https://github.com/FengheTan9/CMU-Net)       |       [ISBI'23](https://arxiv.org/pdf/2210.13012.pdf)        |
+|     CMUNeXt     |       [Pytorch](https://github.com/FengheTan9/CMUNeXt)       |       [Arxiv'23](https://arxiv.org/pdf/2308.01239.pdf)       |
 
 ## Datasets
 
 Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images-dataset) dataset or your own dataset as the following architecture. 
 
 ```
-├── Medical_Image_Segmentation_Benchmark
-    ├── src
-    ├── main.py
-    ├── split.py
+├── Medical-Image-Segmentation-Benchmarks
     ├── data
         ├── busi
             ├── images
@@ -52,6 +54,9 @@ Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images
                 |   ├── 0aab0a.png
                 |   ├── 0b1761.png
                 |   ├── ...
+    ├── src
+    ├── main.py
+    ├── split.py
 ```
 
 ## Environments
@@ -66,13 +71,13 @@ Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images
 You can first split your dataset:
 
 ```python
-python split.py
+python split.py --dataset_root ./data --dataset_name busi
 ```
 
 Then, training and validating your dataset:
 
 ```python
-python main.py --model CMUNet --base_dir ./data/busi --base_lr 0.01 --epoch 300 --batch_size 8
+python main.py --model [CMUNeXt] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 8
 ```
 
 ## Results on BUSI
@@ -85,11 +90,12 @@ We train the U-shape based networks with [BUSI dataset](https://www.kaggle.com/a
 | Attention U-Net |      34.87      |      129.92       |      66.63      |      68.55±3.22       |      76.88±3.50       |
 |     U-Net++     |      26.90      |      125.50       |      37.62      |      69.49±2.94       |      78.06±3.25       |
 |     U-Net3+     |      26.97      |       50.60       |     199.74      |      68.38±3.35       |      76.88±3.68       |
-|    TransUnet    |     105.32      |      112.95       |      38.52      |      71.39±2.37       | **<u>79.85±2.59</u>** |
+|    TransUnet    |     105.32      |      112.95       |      38.52      |      71.39±2.37       |      79.85±2.59       |
 |      MedT       | **<u>1.37</u>** |       22.97       |      2.40       |      63.36±1.56       |      73.37±1.63       |
 |    SwinUnet     |      27.14      |      392.21       |      5.91       |      54.11±2.29       |      65.46±1.91       |
 |      UNeXt      |      1.47       | **<u>650.48</u>** | **<u>0.58</u>** |      65.04±2.71       |      74.16±2.84       |
-|     CMU-Net     |      49.93      |       93.19       |      91.25      | **<u>71.42±2.65</u>** |      79.49±2.92       |
+|     CMU-Net     |      49.93      |       93.19       |      91.25      |      71.42±2.65       |      79.49±2.92       |
+|     CMUNeXt     |      3.14       |      471.43       |      7.41       | **<u>71.56±2.43</u>** | **<u>79.86±2.58</u>** |
 
 ## Acknowledgements:
 
