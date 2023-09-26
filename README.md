@@ -1,6 +1,6 @@
 # Medical 2D Image Segmentation Benchmarks
 
-![ushape](img\ushape.png)
+![ushape](img/ushape.png)
 
 For easy evaluation and fair comparison on 2D medical image segmentation method, we aim to collect and build a medical image segmentation U-shape architecture benchmark to implement the medical 2d image segmentation tasks.
 
