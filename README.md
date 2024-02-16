@@ -21,7 +21,7 @@ This repositories has collected and re-implemented medical image segmentation ne
 |      UNeXt      | [Pytorch](https://github.com/jeya-maria-jose/UNeXt-pytorch)  |      [MICCAI'22](https://arxiv.org/pdf/2203.04967.pdf)       |
 |    SwinUnet     |    [Pytorch](https://github.com/HuCaoFighting/Swin-Unet)     |       [ECCV'22](https://arxiv.org/pdf/2105.05537.pdf)        |
 |     CMU-Net     |       [Pytorch](https://github.com/FengheTan9/CMU-Net)       |       [ISBI'23](https://arxiv.org/pdf/2210.13012.pdf)        |
-|     CMUNeXt     |       [Pytorch](https://github.com/FengheTan9/CMUNeXt)       |       [Arxiv'23](https://arxiv.org/pdf/2308.01239.pdf)       |
+|     CMUNeXt     |       [Pytorch](https://github.com/FengheTan9/CMUNeXt)       |       [ISBI'24](https://arxiv.org/pdf/2308.01239.pdf)       |
 
 ## Datasets
 
@@ -77,7 +77,7 @@ python split.py --dataset_root ./data --dataset_name busi
 Then, training and validating your dataset:
 
 ```python
-python main.py --model [CMUNeXt] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 8
+python main.py --model [CMUNeXt/CMUNet/TransUnet/...] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 8
 ```
 
 ## Results on BUSI
