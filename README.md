@@ -80,6 +80,13 @@ Then, training and validating your dataset:
 python main.py --model [CMUNeXt/CMUNet/TransUnet/...] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 8
 ```
 
+## Inference
+
+```python
+python infer.py --model [CMUNeXt/CMUNet/TransUnet/...] --model_path [.pth] --base_dir ./data/busi --val_file_dir busi_val.txt --img_size 256 --num_classes 1
+```
+
+
 ## Results on BUSI
 
 We train the U-shape based networks with [BUSI dataset](https://www.kaggle.com/aryashah2k/breast-ultrasound-images-dataset). The BUSI collected 780 breast ultrasound images, including normal, benign and malignant cases of breast cancer with their corresponding segmentation results. **We only used benign and malignant images (647 images)**. And we randomly split thrice, 70% for training and 30% for validation. In addition, we resize all the images 256×256 and perform random rotation and flip for data augmentation.
