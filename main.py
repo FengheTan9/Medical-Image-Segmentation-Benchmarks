@@ -24,6 +24,7 @@ from src.network.conv_based.CMUNeXt import cmunext
 
 from src.network.transfomer_based.transformer_based_network import get_transformer_based_model
 
+from src.network.hybrid_based.Mobile_U_ViT import mobileuvit, mobileuvit_l
 
 def seed_torch(seed):
     np.random.seed(seed)
@@ -38,8 +39,8 @@ def seed_torch(seed):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--model', type=str, default="U_Net",
-                    choices=["CMUNeXt", "CMUNet", "AttU_Net", "TransUnet", "R2U_Net", "U_Net",
+parser.add_argument('--model', type=str, default="Mobile_U_ViT",
+                    choices=["Mobile_U_ViT", "CMUNeXt", "CMUNet", "AttU_Net", "TransUnet", "R2U_Net", "U_Net",
                              "UNext", "UNetplus", "UNet3plus", "SwinUnet", "MedT", "TransUnet"], help='model')
 parser.add_argument('--base_dir', type=str, default="./data/busi", help='dir')
 parser.add_argument('--train_file_dir', type=str, default="busi_train.txt", help='dir')
@@ -69,6 +70,8 @@ def get_model(args):
         model = ResNet34UnetPlus(num_class=args.num_classes).cuda()
     elif args.model == "UNet3plus":
         model = UNet3plus(n_classes=args.num_classes).cuda()
+    elif args.model == "Mobile_U_ViT":
+        model = Mobile_U_ViT(out_channel=args.num_classes).cuda()
     else:
         model = get_transformer_based_model(parser=parser, model_name=args.model, img_size=args.img_size,
                                             num_classes=args.num_classes, in_ch=3).cuda()
