@@ -6,6 +6,8 @@ For easy evaluation and fair comparison on 2D medical image segmentation method,
 
 ##### News 🥰
 
+
+- Mobile U-ViT is now on this repo ! 😘
 - CMUNeXt is now on this repo ! 😘
 
 This repositories has collected and re-implemented medical image segmentation networks based on U-shape architecture are followed:
@@ -22,7 +24,7 @@ This repositories has collected and re-implemented medical image segmentation ne
 |    SwinUnet     |    [Pytorch](https://github.com/HuCaoFighting/Swin-Unet)     |       [ECCV'22](https://arxiv.org/pdf/2105.05537.pdf)        |
 |     CMU-Net     |       [Pytorch](https://github.com/FengheTan9/CMU-Net)       |       [ISBI'23](https://arxiv.org/pdf/2210.13012.pdf)        |
 |     CMUNeXt     |       [Pytorch](https://github.com/FengheTan9/CMUNeXt)       |       [ISBI'24](https://arxiv.org/pdf/2308.01239.pdf)       |
-
+|  Mobile U-ViT   |       [Pytorch](https://github.com/FengheTan9/Mobile-U-ViT)  |       [ACM MM'25](https://arxiv.org/pdf/2508.01064.pdf)       |
 ## Datasets
 
 Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images-dataset) dataset or your own dataset as the following architecture. 
@@ -78,13 +80,13 @@ python split.py --dataset_root ./data --dataset_name busi
 Then, training and validating your dataset:
 
 ```python
-python main.py --model [CMUNeXt/CMUNet/TransUnet/...] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 8
+python main.py --model [MobileUViT/CMUNeXt/CMUNet/TransUnet/...] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 8
 ```
 
 ## Inference
 
 ```python
-python infer.py --model [CMUNeXt/CMUNet/TransUnet/...] --model_path [.pth] --base_dir ./data/busi --val_file_dir busi_val.txt --img_size 256 --num_classes 1
+python infer.py --model [MobileUViT/CMUNeXt/CMUNet/TransUnet/...] --model_path [.pth] --base_dir ./data/busi --val_file_dir busi_val.txt --img_size 256 --num_classes 1
 ```
 
 
@@ -104,6 +106,7 @@ We train the U-shape based networks with [BUSI dataset](https://www.kaggle.com/a
 |      UNeXt      |      1.47       | **<u>650.48</u>** | **<u>0.58</u>** |      65.04±2.71       |      74.16±2.84       |
 |     CMU-Net     |      49.93      |       93.19       |      91.25      |      71.42±2.65       |      79.49±2.92       |
 |     CMUNeXt     |      3.14       |      471.43       |      7.41       | **<u>71.56±2.43</u>** | **<u>79.86±2.58</u>** |
+|   Mobile U-ViT  |      1.39       |      326.24       |      2.51       | **<u>72.88±2.72</u>** | **<u>81.18±3.05</u>** |
 
 ## Acknowledgements:
 
